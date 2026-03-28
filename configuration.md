@@ -9,6 +9,6 @@ Media files are NOT stored inside the Plex container.
 They are stored on an external NAS and mounted into the container.
 
 ### Mount point
-
+NFS Mount
 ```text
 /mnt/media
