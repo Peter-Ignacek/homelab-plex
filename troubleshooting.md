@@ -29,42 +29,71 @@ df -hT
 
 
 
-## 2. Media disappearing (NFS idle issue)
-Problem
+## 2. Media disappearing (NAS sleep issue)
 
-Media files intermittently disappeared from Plex libraries.
+### Problem
 
-Root Cause
+Media files disappeared from Plex libraries.
 
-NFS mount became inactive / idle, causing Plex to temporarily lose access to media.
+### Root Cause
 
-Old (initial workaround)
+The NAS (UGREEN) aggressively spins down HDDs (sleep mode).  
+This caused the NFS mount to become inactive, and Plex temporarily lost access to media.
 
-Previously, a cron-based keep-alive approach was considered:
+This is a known issue with some NAS systems in early firmware / aggressive power-saving modes.
 
-*/5 * * * * ls /mnt/media > /dev/null
+---
 
-This approach was not used in the final setup.
+## Solution
 
-Final Solution (production)
+A keep-alive mechanism was implemented on the Proxmox host to prevent the NFS mount from going idle.
 
-A keep-alive mechanism was implemented on the Proxmox host using systemd.
+Instead of fixing it only on the NAS side, the solution ensures constant activity on the mount.
+
+---
+
+## Implementation (systemd timer)
+
+### Service
+
+```ini
+[Unit]
+Description=NFS Keepalive (prevent sleep)
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/stat /mnt/nfs-plex
-
+```
 Timer
-runs every 10 minutes
-starts automatically after boot
-Why stat instead of ls
-stat touches the mount only (inode access)
-no directory listing
-minimal I/O load on NAS
-Result
-stable NFS mount
-no disappearing media
-consistent Plex library behavior
-Location
+[Unit]
+Description=Run NFS keepalive every 10 minutes
 
-Keep-alive is configured on the Proxmox host, not inside the Plex container.
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=10min
+AccuracySec=1min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+
+
+Why this works
+- stat triggers minimal activity on the mount
+- no directory scan (unlike ls)
+- prevents NAS from fully idling the share
+- keeps Plex library stable
+- 
+Result
+
+- no more disappearing media
+- stable Plex libraries
+- no noticeable load on NAS
+  
+Notes
+- keep-alive runs on the Proxmox host
+- Plex container does not handle this directly
+- long-term improvement would be NAS-side tuning (firmware / sleep settings)
+
