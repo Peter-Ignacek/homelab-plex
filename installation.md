@@ -1,12 +1,15 @@
-# Installation
+# Installation Plex Media Server
 
 ## Base
 
 ```bash
-sudo apt update && sudo apt upgrade -y
+apt update && apt upgrade -y
+apt install curl -y
 
+# Download Plex (latest .deb from official site)
+wget https://downloads.plex.tv/plex-media-server-new/...
+dpkg -i plexmediaserver*.deb
 
-sudo dpkg -i plexmediaserver*.deb
-sudo apt -f install
-
-
+# Fix dependencies if needed
+apt --fix-broken install -y ```
+ dfgdfg
