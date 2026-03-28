@@ -11,5 +11,4 @@ wget https://downloads.plex.tv/plex-media-server-new/...
 dpkg -i plexmediaserver*.deb
 
 # Fix dependencies if needed
-apt --fix-broken install -y ```
- dfgdfg
+apt --fix-broken install -y
