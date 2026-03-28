@@ -12,3 +12,20 @@ They are stored on an external NAS and mounted into the container.
 NFS Mount
 ```text
 /mnt/media
+
+Active mount:
+
+```bash
+/data ← 192.168.1.100:/volume1/Plex
+Verified with:
+findmnt -t nfs,nfs4
+Mount Options
+vers=3
+proto=tcp
+hard
+timeo=600
+retrans=3
+Meaning
+hard → retry until server responds
+tcp → stable connection
+timeo/retrans → timeout and retry tuning
