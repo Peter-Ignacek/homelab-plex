@@ -60,8 +60,6 @@ Media is stored on NAS:
 - Cleaned storage to fix transcode issues
 - Fixed repository update (Plex repo migration)
 
-## 📸 Screenshots
-(optional)
 
 ## Status
 
