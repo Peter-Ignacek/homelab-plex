@@ -14,22 +14,32 @@ NFS mount became inactive / idle, causing Plex to temporarily lose access to med
 
 Previously, a cron-based keep-alive approach was considered:
 
-```bash
-*/5 * * * * ls /mnt/media > /dev/null`
+*/5 * * * * ls /mnt/media > /dev/null 
+This approach was not used in the final setup.
 
-asdasdasdas
+Final Solution (production)
 
-asdasasd
+A keep-alive mechanism was implemented on the Proxmox host using systemd.
 
+Service
 
-asdasda
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/stat /mnt/nfs-plex
 
+Timer
+runs every 10 minutes
+starts automatically after boot
 
-  sdfsd<Maassdasd
-MasdasdMNMNmkmk
-kmkmkmkmkmköl
-lll
-lll
+Why stat instead of ls
+stat touches the mount only (inode access)
+no directory listing
+minimal I/O load on NAS
 
-  ll  lllll
-llll
+Result
+stable NFS mount
+no disappearing media
+consistent Plex library behavior
+Location
+
+Keep-alive is configured on the Proxmox host, not inside the Plex container.
