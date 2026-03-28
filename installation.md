@@ -55,20 +55,23 @@ systemctl restart plexmediaserver
 ### Enable Hardware Acceleration in Plex
 
 Open Plex Web UI:
+-Settings → Transcoder
+-Enable:
+-✅ Use hardware acceleration when available
+-✅ Use hardware-accelerated video encoding
 
-Settings → Transcoder
-Enable:
-✅ Use hardware acceleration when available
-✅ Use hardware-accelerated video encoding
-6. Verification
-Play 4K video
-Check dashboard → should show (hw) transcoding
-CPU usage should stay low
+### Verification
+
+-Play 4K video
+-Check dashboard → should show (hw) transcoding
+-CPU usage should stay low
+
 ✅ Result
-Stable 4K streaming
-Low CPU usage
-Hardware transcoding working via VAAPI
+- Stable 4K streaming
+- Low CPU usage
+- Hardware transcoding working via VAAPI
 ⚠️ Notes
+
 Requires Plex Pass
 Tested on Intel iGPU (Quick Sync)
 Works in unprivileged LXC with proper device mapping
