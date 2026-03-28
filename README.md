@@ -22,7 +22,7 @@ Media is stored on NAS:
 
 - Plex IP 192.168.1.155
 - NFS mount:
-  192.168.1.100:/volume1/Plex → /data
+  192.168.1.100:/volume1/Plex → /data (UGREEN NAS)
 
 ## Media Structure
 
