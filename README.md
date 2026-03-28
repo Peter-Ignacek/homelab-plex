@@ -48,6 +48,7 @@ Media is stored on NAS:
 ## 🌐 Network
 - Internal access via LAN
 - External via reverse proxy (optional)
+- External via VPN wireguard
 
 ## 📂 Data location
 /var/lib/plexmediaserver/
