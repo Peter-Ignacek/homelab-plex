@@ -15,5 +15,21 @@ NFS mount became inactive / idle, causing Plex to temporarily lose access to med
 Previously, a cron-based keep-alive approach was considered:
 
 ```bash
-*/5 * * * * ls /mnt/media > /dev/null
-This approach was not used in the final setup.
+*/5 * * * * ls /mnt/media > /dev/null`
+
+asdasdasdas
+
+asdasasd
+
+
+asdasda
+
+
+  sdfsd<Maassdasd
+MasdasdMNMNmkmk
+kmkmkmkmkmköl
+lll
+lll
+
+  ll  lllll
+llll
