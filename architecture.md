@@ -3,7 +3,7 @@
 ## High-Level Overview
 
 ```text
-Remote Seedbox (Prowlarr,Sonarr,Radarr)
+Remote Seedbox (Prowlarr,Sonarr,Radarr,Bazarr)
     │
     │  (SFTP / Rclone sync)
     ▼
