@@ -16,36 +16,38 @@ Most of the space was consumed by Plex local data:
 - 3.1G in `.../Plex Media Server/Metadata`
 
 ### Solution
-1) Zatrzymaj Plex
+1) Stop Plex
+````
 systemctl stop plexmediaserver
-2) Sprawdź dokładnie co zjada miejsce
+````
+3) Check what is using space
 
-Wklej po kolei:
+Run:
 ````
 du -sh /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/*
 ````
-a potem dokładniej:
+Then more detailed:
 ````
 du -sh /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Media/*
 du -sh /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata/*
 ````
-🔥 Szybkie rozwiązanie (bezpieczne)
+🔥 Quick fix (safe)
 
-Masz Plex już zatrzymany — idealnie.
+Plex is already stopped — perfect.
 
-💣 KROK 1 – usuń największy syf
+💣 STEP 1 – remove the biggest junk
 ````
 rm -rf "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Media/localhost"
 ````
-💡 To:
+💡 This:
 
-❌ NIE usuwa filmów
-❌ NIE usuwa biblioteki
-✅ usuwa tylko cache / miniatury
+❌ does NOT delete your movies
+❌ does NOT delete your library
+✅ removes only cache / preview thumbnails
 
-👉 odzyskasz ~23 GB od razu
+👉 frees ~23 GB immediately
 
-🧹 KROK 2 – szybkie czyszczenie reszty (warto)
+🧹 STEP 2 – clean remaining unnecessary data (recommended)
 
 ````
 rm -rf "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Cache"/*
@@ -54,10 +56,13 @@ rm -rf "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/C
 rm -rf "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Codecs"/*
 ````
 
-👉 kolejne ~500–700 MB odzyskane
+👉 frees another ~500–700 MB
 
-▶️ KROK 3 – uruchom Plex
+▶️ STEP 3 – start Plex again
+````
 systemctl start plexmediaserver
-📊 KROK 4 – sprawdź efekt
+````
+📊 STEP 4 – verify result
+````
 df -h /
-
+````
