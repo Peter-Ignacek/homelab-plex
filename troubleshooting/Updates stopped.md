@@ -1,7 +1,3 @@
-### Plex updates stopped working after repository migration
-
-**Problem**
-
 Plex package updates stopped working through `apt` because Plex migrated to a new Linux repository.
 
 **Cause**
