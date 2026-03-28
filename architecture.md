@@ -33,3 +33,16 @@ Media files are stored on NAS and accessed via NFS mount.
 Rclone is NOT running inside this container. (runs on PVE node)
 
 Media synchronization is handled externally.
+
+
+### Keep-alive mechanism
+
+To prevent NFS idle/sleep related issues, a systemd timer runs on the Proxmox host every 10 minutes:
+
+- service: `nfs-keepalive.service`
+- timer: `nfs-keepalive.timer`
+
+Command used:
+
+```bash
+/usr/bin/stat /mnt/nfs-plex
