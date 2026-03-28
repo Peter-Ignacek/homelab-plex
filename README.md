@@ -1,17 +1,36 @@
 # 🎬 Plex Media Server – Homelab Setup
 
 ## 📌 Overview
-Self-hosted Plex Media Server running on Proxmox LXC container.
+his repository documents my real-world Plex setup, including storage, synchronization, and troubleshooting.
+
+The setup is designed for:
+- reliable media access
+- separation of services
+- automated media workflow
 
 ## ⚙️ Environment
-- Host: Proxmox VE
-- OS: Ubuntu 22.04 LXC
-- Hardware acceleration: enabled (/dev/dri)
+- **Platform:** Proxmox VE
+- **Location:** Poland
+- **Type:** LXC container
+- **OS:** Ubuntu 22.04 LTS
+- **Storage:** External NAS (NFS mount)
+- **Sync:** Rclone (SFTP)
 
+## Architecture Highlights
+
+- Plex runs in LXC container
+- Media is stored on external NAS (mounted via NFS)
+- Remote services provide media automation (radarr/sonarr-like)
+- Files are synchronized via Rclone (SFTP)
+- Hardware acceleration enabled (`/dev/dri`)
+
+  
 ## 🚀 Features
-- Media streaming (local + remote)
+- Centralized media storage on NAS
+- Automated media pipeline (remote → sync → Plex)
 - Hardware transcoding
-- Live TV (HDHomeRun)
+- Live TV / DVR (HDHomeRun)
+- Custom troubleshooting and stability improvements
 
 ## 🌐 Network
 - Internal access via LAN
@@ -29,3 +48,8 @@ Self-hosted Plex Media Server running on Proxmox LXC container.
 
 ## 📸 Screenshots
 (optional)
+
+## Status
+
+- Active
+- Continuously improved
