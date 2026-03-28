@@ -33,7 +33,7 @@ Media is stored on NAS:
 
 ## Architecture Highlights
 
-- Remote services provide media automation (radarr/sonarr-like)
+- Remote services provide media automation (radarr/sonarr/Prowlarr/Bazarr/Overserr-like)
 - Files are synchronized via Rclone (SFTP)
 - Hardware acceleration enabled (`/dev/dri`)
 
@@ -49,9 +49,10 @@ Media is stored on NAS:
 ## 🌐 Network
 - Internal access via LAN
 - External via reverse proxy (optional)
-- External via VPN wireguard
+- External via VPN WireGuard
 
 ## 📂 Data location
+
 /var/lib/plexmediaserver/
 
 ## 🔧 Setup Guide
