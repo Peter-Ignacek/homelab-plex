@@ -1,3 +1,5 @@
+👉 dokładnie TEN (copy-paste):
+
 ## 2. Media disappearing (NFS idle issue)
 
 ### Problem
@@ -16,6 +18,7 @@ Previously, a cron-based keep-alive approach was considered:
 
 ```bash
 */5 * * * * ls /mnt/media > /dev/null
+
 This approach was not used in the final setup.
 
 Final Solution (production)
@@ -40,33 +43,3 @@ consistent Plex library behavior
 Location
 
 Keep-alive is configured on the Proxmox host, not inside the Plex container.
-
-
-
-
-
-# 📄 troubleshooting.md (🔥 FINAL)
-
-```md
-# Troubleshooting
-
-## 1. Disk Full (Critical)
-
-### Problem
-
-Root filesystem reached 100%.
-
-### Cause
-
-Plex stored large local data:
-
-- 28GB total
-- 23GB in Media (cache/previews)
-
-### Check
-
-```bash
-du -h --max-depth=1 /var/lib/plexmediaserver/Library/Application Support/Plex Media Server
-
-
-
