@@ -30,6 +30,6 @@ Media files are stored on NAS and accessed via NFS mount.
 
 ## Notes
 
-Rclone is NOT running inside this container.
+Rclone is NOT running inside this container. (runs on PVE node)
 
 Media synchronization is handled externally.
