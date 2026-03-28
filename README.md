@@ -32,8 +32,6 @@ Media is stored on NAS:
 
 ## Architecture Highlights
 
-- Plex runs in LXC container
-- Media is stored on external NAS (mounted via NFS)
 - Remote services provide media automation (radarr/sonarr-like)
 - Files are synchronized via Rclone (SFTP)
 - Hardware acceleration enabled (`/dev/dri`)
