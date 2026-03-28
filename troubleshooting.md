@@ -19,11 +19,19 @@ Most of the space was consumed by Plex local data:
 - 23G in `.../Plex Media Server/Media`
 - 3.1G in `.../Plex Media Server/Metadata`
 
-### Check
+### Solution
+1) Zatrzymaj Plex
+systemctl stop plexmediaserver
+2) Sprawdź dokładnie co zjada miejsce
 
-```bash
-du -h --max-depth=1 "/var/lib/plexmediaserver/Library/Application Support/Plex Media Server" | sort -hr
-df -hT
+Wklej po kolei:
+´´´´
+du -sh /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/*
+´´´´
+a potem dokładniej:
+´´´´
+du -sh /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Media/*
+du -sh /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Metadata/*
 
 ```
 
