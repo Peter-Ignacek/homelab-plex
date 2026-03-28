@@ -16,6 +16,20 @@ The setup is designed for:
 - **Storage:** External NAS (NFS mount)
 - **Sync:** Rclone (SFTP)
 
+## Storage
+
+Media is stored on NAS:
+
+- NFS mount:
+  192.168.1.100:/volume1/Plex → /data
+
+## Media Structure
+
+- /data/Movies
+- /data/TV
+- /data/_radarr
+- /data/_sonarr
+
 ## Architecture Highlights
 
 - Plex runs in LXC container
@@ -31,6 +45,7 @@ The setup is designed for:
 - Hardware transcoding
 - Live TV / DVR (HDHomeRun)
 - Custom troubleshooting and stability improvements
+- Stable uptime (40+ days)
 
 ## 🌐 Network
 - Internal access via LAN
