@@ -16,4 +16,10 @@ Active mount:
 /data ← 192.168.1.100:/volume1/Plex
 
 
+Mount Options
 
+vers=3
+proto=tcp
+hard
+timeo=600
+retrans=3
