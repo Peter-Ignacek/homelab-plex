@@ -26,7 +26,10 @@ du -h --max-depth=1 "/var/lib/plexmediaserver/Library/Application Support/Plex M
 df -hT
 
 ```
-2. Media disappearing (NFS idle issue)
+
+
+
+## 2. Media disappearing (NFS idle issue)
 Problem
 
 Media files intermittently disappeared from Plex libraries.
