@@ -11,9 +11,9 @@ The NFS mount between the Proxmox host and the UGREEN NAS became unavailable, ca
 
 Manual checks confirmed that the mount was no longer active.
 
-Commands used & Solution:
+### Commands used & Solution
 
-Sprawdzenie czy jest zamontowane:
+#### Check if the mount is active
 ````
 findmnt /mnt/nfs-plex
 ````
@@ -21,20 +21,20 @@ or
 ````
 df -h | grep nfs
 ````
-Spawdzenie wpisu na hoscie pve (nie w kontenerzy plex) 
+Verify fstab configuration (on Proxmox host, NOT inside the Plex container) 
 ````
 nano /etc/fstab
 ````
-Powinno byc: 
+Expected entry:
 ````
 192.168.1.100:/volume1/Plex /mnt/nfs-plex nfs vers=3,rw,hard,timeo=600,retrans=3,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
 `````
 
-Sparwdz tajna bron "keep Alive"
+Check the "keep-alive" mechanism
 ````
 stat /mnt/nfs-plex
 ````
-Szybki test (czy Plex widzi pliki)
+Quick test (verify Plex can see files)
 ````
 ls /mnt/nfs-plex
 ````
