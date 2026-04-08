@@ -20,9 +20,10 @@ The setup is designed for:
 
 Media is stored on NAS:
 
-- Plex IP 192.168.1.155
+
 - Media on Ugreen NAS + NFS mount:
   192.168.1.100:/volume1/Plex → /data 
+- Plex on intel U7 155 - IP 192.168.1.155 
 
 ## Media Structure
 
