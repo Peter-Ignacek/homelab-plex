@@ -1,7 +1,7 @@
 # 🎬 Plex Media Server – Homelab Setup
 
 ## 📌 Overview
-his repository documents my real-world Plex setup, including storage, synchronization, and troubleshooting.
+This repository documents my real-world Plex setup, including storage, synchronization, and troubleshooting.
 
 The setup is designed for:
 - reliable media access
