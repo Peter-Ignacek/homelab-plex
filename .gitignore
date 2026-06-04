@@ -1,0 +1,59 @@
+# Secrets and local environment
+.env
+.env.*
+*.env
+*.secret
+*.secrets
+secrets.*
+credentials.*
+token.*
+tokens.*
+apikey.*
+api_key.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+known_hosts
+
+# Plex runtime data and local library state
+Library/
+Plex Media Server/
+Plug-in Support/
+Cache/
+Logs/
+Metadata/
+Media/
+Codecs/
+Crash Reports/
+Diagnostics/
+Preferences.xml
+plexmediaserver.pid
+
+# Docker and local overrides
+docker-compose.override.yml
+compose.override.yml
+
+# Backups, logs, and temporary files
+backups/
+backup/
+*.bak
+*.backup
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+logs/
+*.log
+*.tmp
+*.temp
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
