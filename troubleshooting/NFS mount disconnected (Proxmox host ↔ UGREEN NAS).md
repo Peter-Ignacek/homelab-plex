@@ -1,4 +1,4 @@
-### Problem
+﻿### Problem
 
 The NFS mount between the Proxmox host and the UGREEN NAS became unavailable, causing Plex to lose access to the media library.
 
@@ -27,7 +27,7 @@ nano /etc/fstab
 ````
 Expected entry:
 ````
-192.168.1.100:/volume1/Plex /mnt/nfs-plex nfs vers=3,rw,hard,timeo=600,retrans=3,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
+<PRIVATE_IP>:/volume1/Plex /mnt/nfs-plex nfs vers=3,rw,hard,timeo=600,retrans=3,_netdev,nofail,x-systemd.automount,x-systemd.idle-timeout=600 0 0
 `````
 
 Check the "keep-alive" mechanism

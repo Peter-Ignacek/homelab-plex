@@ -1,4 +1,4 @@
-# Configuration
+﻿# Configuration
 
 This file describes how Plex is configured in my homelab.
 
@@ -13,7 +13,7 @@ NFSv3
 Active mount:
 
 ```bash
-/data ← 192.168.1.100:/volume1/Plex
+/data ← <PRIVATE_IP>:/volume1/Plex
 
 
 Mount Options

@@ -1,4 +1,4 @@
-# 🎬 Plex Media Server – Homelab Setup
+﻿# 🎬 Plex Media Server – Homelab Setup
 
 ## 📌 Overview
 This repository documents my real-world Plex setup, including storage, synchronization, and troubleshooting.
@@ -22,8 +22,8 @@ Media is stored on NAS:
 
 
 - Media on Ugreen NAS + NFS mount:
-  192.168.1.100:/volume1/Plex → /data 
-- Plex (proxmox) on intel U7 155 - IP 192.168.1.155 
+  <PRIVATE_IP>:/volume1/Plex → /data 
+- Plex (proxmox) on intel U7 155 - IP <PRIVATE_IP> 
 
 ## Media Structure
 

@@ -1,4 +1,4 @@
-# Architecture
+﻿# Architecture
 
 ## High-Level Overview
 
@@ -20,7 +20,7 @@ Clients (TV / Apps)
 
 ### NAS
 
-- IP: 192.168.1.100
+- IP: <PRIVATE_IP>
 - NFS share: /volume1/Plex
 - mounted to: /data
 
